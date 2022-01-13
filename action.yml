@@ -4,10 +4,10 @@ author: "Taras Kushnir"
 inputs:
   REPO:
     description: "Repository"
-    default: ""
+    default: "${{ github.repository }}"
   TOKEN:
     description: "Github token"
-    default: ""
+    default: "${{ secrets.GITHUB_TOKEN }}"
   INCLUDE_PATTERN:
     description: "Regexp for source files to include"
     default: ""
@@ -40,10 +40,10 @@ inputs:
     default: "todo comment"
   SHA:
     description: "SHA value of the commit"
-    default: ""
+    default: "${{ github.sha }}"
   REF:
     description: "Github Ref that triggered the workflow (branch or tag)"
-    default: ""
+    default: "${{ github.ref }}"
   EXTENDED_LABELS:
     description: "Create additional labels to mark branch, issue type etc."
     default: "1"

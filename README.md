@@ -42,10 +42,10 @@ You can use this action together with [parent issue updater](https://github.com/
 
 | Input | Description |
 |---|---|
-| `REPO`  | Repository name in the format of `owner/repo` (required)   |
-| `TOKEN`  | Github token used to create or close issues (required)  |
-| `REF`  | Git ref: branch or pull request (required)|
-| `SHA`  | SHA-1 value of the commit (required) |
+| `REPO`  | Repository name in the format of `owner/repo` (defaults to current repo)   |
+| `TOKEN`  | Github token used to create or close issues (defaults to `${{ secrets.GITHUB_TOKEN }}`)  |
+| `REF`  | Git ref: branch or pull request (defaults to `${{ github.ref }}`)|
+| `SHA`  | SHA-1 value of the commit (defaults to `${{ github.sha }}`) |
 | `ROOT`  | Source code root (defaults to `.`) |
 | `LABEL`  | Label to add to the new issues (defaults to `todo comment`) |
 | `EXTENDED_LABELS`  | Add additional labels to mark branch, issue type and estimate |
