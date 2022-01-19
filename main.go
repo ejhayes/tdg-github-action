@@ -462,6 +462,8 @@ func (s *service) closeMissingIssues(issueMap map[string]*github.Issue, comments
 // TODO: Fix main parsing
 // This is all about the parseFile function
 // and comments related to how it is done
+// - Item 1
+// - Item 2
 func main() {
 	log.SetOutput(os.Stdout)
 
