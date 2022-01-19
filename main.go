@@ -459,6 +459,9 @@ func (s *service) closeMissingIssues(issueMap map[string]*github.Issue, comments
 	log.Printf("Closed issues. count=%v", count)
 }
 
+// TODO: Fix main parsing
+// This is all about the parseFile function
+// and comments related to how it is done
 func main() {
 	log.SetOutput(os.Stdout)
 
