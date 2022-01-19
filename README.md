@@ -27,6 +27,8 @@ jobs:
     - uses: actions/checkout@master
     - name: Run tdg-github-action
       uses: ribtoks/tdg-github-action@master
+      with:
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 > **NOTE:** Please note that currently GitHub has 5000 requests per hour limit so if you are running it on a fresh repository and you have lots of todos in comments, you may hit this limit.
@@ -38,7 +40,7 @@ You can use this action together with [parent issue updater](https://github.com/
 | Input | Description |
 |---|---|
 | `REPO`  | Repository name in the format of `owner/repo` (defaults to current repo)   |
-| `TOKEN`  | Github token used to create or close issues (defaults to `${{ secrets.GITHUB_TOKEN }}`)  |
+| `TOKEN`  | Github token used to create or close issues |
 | `REF`  | Git ref: branch or pull request (defaults to `${{ github.ref }}`)|
 | `SHA`  | SHA-1 value of the commit (defaults to `${{ github.sha }}`) |
 | `ROOT`  | Source code root (defaults to `.`) |

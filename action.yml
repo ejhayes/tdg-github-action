@@ -7,7 +7,6 @@ inputs:
     default: "${{ github.repository }}"
   TOKEN:
     description: "Github token"
-    default: "${{ secrets.GITHUB_TOKEN }}"
   INCLUDE_PATTERN:
     description: "Regexp for source files to include"
     default: ""
@@ -57,8 +56,8 @@ inputs:
     description: 'Action binary to download'
     default: 'https://github.com/ribtoks/tdg-github-action/releases/latest/download/action.tar.gz'
 runs:
-  using: 'node12'
-  main: main.js
+  using: "docker"
+  image: "Dockerfile"
 
 branding:
   icon: "check-square"
