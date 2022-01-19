@@ -53,9 +53,12 @@ inputs:
   COMMENT_ON_ISSUES:
     description: "Create commit reference in the comments before closing the issue"
     default: "0"
+  ACTION_ASSET_URL:
+    description: 'Action binary to download'
+    default: 'https://github.com/ribtoks/tdg-github-action/releases/latest/download/action.tar.gz'
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: 'node12'
+  main: main.js
 
 branding:
   icon: "check-square"
