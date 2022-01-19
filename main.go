@@ -25,7 +25,6 @@ const (
 	defaultIssuesPerPage = 200
 	contextLinesUp       = 3
 	contextLinesDown     = 7
-	ghRoot               = "/github/workspace"
 	minEstimate          = 0.01
 	hourMinutes          = 60
 	labelBranchPrefix    = "branch: "
@@ -34,6 +33,8 @@ const (
 )
 
 func sourceRoot(root string) string {
+	ghRoot := os.Getenv("GITHUB_WORKSPACE")
+
 	if strings.HasPrefix(root, "/") {
 		return ghRoot + root
 	}
