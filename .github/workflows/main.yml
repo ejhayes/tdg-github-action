@@ -7,3 +7,5 @@ jobs:
     - uses: actions/checkout@master
     - name: Run tdg-github-action
       uses: ejhayes/tdg-github-action@master
+      with:
+        ACTION_ASSET_URL: 'https://github.com/ejhayes/tdg-github-action/releases/latest/download/action.tar.gz'
