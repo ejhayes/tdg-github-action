@@ -27,11 +27,6 @@ jobs:
     - uses: actions/checkout@master
     - name: Run tdg-github-action
       uses: ribtoks/tdg-github-action@master
-      with:
-        TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        REPO: ${{ github.repository }}
-        SHA: ${{ github.sha }}
-        REF: ${{ github.ref }}
 ```
 
 > **NOTE:** Please note that currently GitHub has 5000 requests per hour limit so if you are running it on a fresh repository and you have lots of todos in comments, you may hit this limit.
@@ -59,6 +54,7 @@ You can use this action together with [parent issue updater](https://github.com/
 | `ADD_LIMIT`  | Upper cap on the number of issues to create (defaults to `0` - unlimited) |
 | `CLOSE_LIMIT`  | Upper cap on the number of issues to close (defaults to `0` - unlimited) |
 | `COMMENT_ON_ISSUES` | Leave a comment in which commit the issue was closed (defaults to `0` - do not comment) |
+| `ACTION_ASSET_URL` | Action binary to download (defaults to latest release) |
 
 > **NOTE:** Keep in mind that you have to escape slashes in regex patterns when putting them to yaml
 
