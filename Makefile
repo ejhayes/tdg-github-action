@@ -1,7 +1,6 @@
 SHELL := /bin/bash
 GO := GO111MODULE=on GO15VENDOREXPERIMENT=1 go
 GO_NOMOD := GO111MODULE=off go
-
 GO_VERSION       := $(shell $(GO) version | sed -e 's/^[^0-9.]*\([0-9.]*\).*/\1/')
 
 export PATH := $(PATH):$(GOPATH1)/bin
