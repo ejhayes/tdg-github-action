@@ -44,4 +44,5 @@ run()
 })
 .catch((errCode) => {
     console.error(`Failed with error code: ${errCode}`)
+    process.exit(errCode)
 })
