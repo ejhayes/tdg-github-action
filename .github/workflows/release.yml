@@ -14,7 +14,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         goos: linux
         goarch: amd64
-        build_command: go get -d -v && go build -v .
+        build_command: make build
         overwrite: true
         binary_name: action
         asset_name: action
