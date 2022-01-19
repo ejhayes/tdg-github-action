@@ -56,8 +56,8 @@ inputs:
     description: 'Action binary to download'
     default: 'https://github.com/ribtoks/tdg-github-action/releases/latest/download/action.tar.gz'
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: "node12"
+  image: "main.js"
 
 branding:
   icon: "check-square"

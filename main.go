@@ -324,14 +324,14 @@ func (s *service) updateExistingIssues(issueMap map[string]*github.Issue, commen
 		if ok {
 			// issue already exists, update it if the body or labels have changed
 			if (body != *existingIssue.Body) || (!unorderedEqual(labels, s.extractLabels(existingIssue))) {
-				issue, _, err := s.client.Issues.Edit(s.ctx, s.env.owner, s.env.repo, int(existingIssue.GetID()), req)
+				issue, _, err := s.client.Issues.Edit(s.ctx, s.env.owner, s.env.repo, *existingIssue.Number, req)
 				if err != nil {
 					log.Printf("Error updating an issue. err=%v", err)
 					continue
 				}
 
 				updatedCount++
-				log.Printf("Updated an issue. title=%v issue=%v", c.Title, issue.GetID())
+				log.Printf("Updated an issue. title=%v issue=%v", c.Title, issue.Number)
 			}
 		} else {
 			// otherwise create a new issue
@@ -341,7 +341,7 @@ func (s *service) updateExistingIssues(issueMap map[string]*github.Issue, commen
 				continue
 			}
 
-			log.Printf("Created an issue. title=%v issue=%v", c.Title, issue.GetID())
+			log.Printf("Created an issue. title=%v issue=%v", c.Title, issue.Number)
 
 			if s.env.projectColumnID != -1 {
 				s.createProjectCard(issue)
