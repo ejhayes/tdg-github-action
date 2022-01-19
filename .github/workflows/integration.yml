@@ -17,11 +17,12 @@ jobs:
       - uses: actions/checkout@master
       - name: Self test
         id: selftest
-        uses: ribtoks/tdg-github-action@master
+        uses: ejhayes/tdg-github-action@master
         with:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DRY_RUN: 1
           EXCLUDE_PATTERN: "\\.*/vendor/"
+          ACTION_ASSET_URL: 'https://github.com/ejhayes/tdg-github-action/releases/latest/download/action.tar.gz'
       - name: Check outputs
         run: |
           test "${{ steps.selftest.outputs.scannedIssues }}" == "1"
